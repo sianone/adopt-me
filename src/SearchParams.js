@@ -1,11 +1,24 @@
+import { useState } from 'react';
+
 const SearchParams = () => {
-    const location=  "Seattle, WA";
+    const [location, setLocation] = useState("Seattle, WA");
+
+    // arrow function replaced this function.
+    // function updateLocation(e) {
+    //     setLocation(e.target.value);
+    // }
+
     return (
         <div className="search-params">
             <form>
                 <label htmlFor="location">
                     Location
-                    <input value="location" value={location.toUpperCase()} placeholder="Location"/>
+                <input 
+                    id="location" 
+                    onChange={(e) => setLocation(e.target.value)} 
+                    value={location.toUpperCase()} 
+                    placeholder="Location"
+                />
                 </label>
                 <button>Submit</button>
             </form>
