@@ -35,7 +35,6 @@ const SearchParams = () => {
         onSubmit={(e) => {
           e.preventDefault();
           requestPets();
-          setBreed([]);
         }}
       >
         <label htmlFor="location">
@@ -53,7 +52,10 @@ const SearchParams = () => {
           <select
             id="animal"
             value={animal}
-            onChange={(e) => setAnimal(e.target.value)}
+            onChange={(e) => {
+              setAnimal(e.target.value);
+              setBreed([]);
+            }}
             onBlur={(e) => setAnimal(e.target.value)}
           >
             <option />
