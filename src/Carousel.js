@@ -10,7 +10,7 @@ class Carousel extends Component {
   };
 
   handleIndexClick = (event) => {
-    // arrow functions binds this. could also use bind() onClick jsx atribute
+    // arrow functions binds this. could also use bind(this) onClick jsx atribute
     this.setState({
       active: +event.target.dataset.index, //coerce string to number with + sign
     });
